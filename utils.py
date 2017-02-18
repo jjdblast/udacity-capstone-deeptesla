@@ -389,7 +389,7 @@ def save_model(model, epoch=''):
     model.save_weights(param_path)
     print('Model saved')
     
-def get_model(epoch):
+def get_model():
     """
     Defines the model
     :return: Returns the model
@@ -397,11 +397,11 @@ def get_model(epoch):
     """
     Check if a model already exists
     """
-    model_path = join_dir(params.model_dir, 'model_{}.json'.format(epoch))
-    param_path = join_dir(params.model_dir, 'model_{}.h5'.format(epoch))
+    model_path = join_dir(params.model_dir, 'model.json')
+    param_path = join_dir(params.model_dir, 'model.h5')
     
     if os.path.exists(model_path):
-        ch = input('Model'+str(epoch)+' already exists, do you want to reuse? (y/n): ')
+        ch = input('Model already exists, do you want to reuse? (y/n): ')
         if ch == 'y' or ch == 'Y':
             with open(model_path, 'r') as in_file:
                 json_model = in_file.read()
@@ -409,7 +409,7 @@ def get_model(epoch):
 
             weights_file = os.path.join(param_path)
             model.load_weights(weights_file)
-            print('Model' +str(epoch)+ ' fetched from the disk')
+            print('Model fetched from the disk')
             model.summary()
     return model
 
