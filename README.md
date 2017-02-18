@@ -4,7 +4,7 @@ http://selfdrivingcars.mit.edu/deeptesla/
 ## 题目描述
 本项目中，你需要利用MIT 6.S094 这门公开课中的Tesla数据集训练深度学习模型，根据车辆的前置相机所拍摄的路况图像，实现对车辆转向角度的预测。
 
-<div id="video_output">![](./images/img/gif_tesla_vgg.gif)</div>
+![](./images/img/gif_tesla_vgg.gif)
 
 ## 数据
 主要包括tesla在两种不同驾驶模式（human driving和autopilot）下的前置相机录制的视频和车辆的转向控制信号。数据可以从这里下载:[百度云](https://pan.baidu.com/s/1hrEWtyG)
